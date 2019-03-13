@@ -1,2 +1,3 @@
-# signsjs
-Just express made easy
+# Signs.js
+
+## Just Express. Made easy.
