@@ -1,6 +1,6 @@
 export { IModule } from "./bootstrapper/IModule";
 export { Application } from "./bootstrapper/Application";
-export { Route, RouteType, RouteMetadata } from "./bootstrapper/Route";
+export { Controller, Route, RouteType, RouteMetadata } from "./bootstrapper/Route";
 
 export { IExpressConfig } from "./engine/IExpressConfig";
 export { IController, IRoute, IRouteDecorator, IHandlerFactory } from "./engine/IController";
