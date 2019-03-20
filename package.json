@@ -1,6 +1,6 @@
 {
   "name": "signs-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Just Express. Made easy.",
   "main": "dist",
   "typings": "dist",
@@ -19,6 +19,8 @@
   "homepage": "https://github.com/pirropirro/signs.js#readme",
   "dependencies": {
     "body-parser": "^1.16.1",
+    "class-transformer": "^0.1.8",
+    "class-validator": "^0.7.3",
     "express": "^4.16.4",
     "inversify": "~3.0.0",
     "lodash": "^4.17.4",

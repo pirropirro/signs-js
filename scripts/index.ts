@@ -11,3 +11,5 @@ export { ILogger } from "./logger/ILogger";
 export { IMiddleware } from "./middlewares/IMiddleware";
 export { BodyMiddleware } from "./middlewares/BodyMiddleware";
 export { CORSMiddleware } from "./middlewares/CORSMiddleware";
+
+export { Validatable, IValidatable, ToPlain } from "./Validatable";
