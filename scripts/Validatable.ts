@@ -24,12 +24,12 @@ export const Validatable = <T extends ClassType<any>>(Base: T): ValidatableClass
         public __defaultGroup = "all";
 
         public validate(groups?: string | string[]) {
-            forIn(this, (v, k) => {
+            forIn(this, (v, k: keyof this) => {
                 if (typeof (v) !== "function") this.__errors[k] = [];
             });
 
             validateSync(this, this.getValidatorOptions(groups))
-                .forEach(({ property, constraints }) => this.__errors[property] = map(constraints, v => v))
+                .forEach(({ property, constraints }) => this.__errors[property as keyof this] = map(constraints, v => v))
         }
 
         public hasErrors(groups?: string | string[]): boolean {
