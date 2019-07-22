@@ -1,6 +1,6 @@
 import { Application } from "express";
 
-export interface IExpress {
+export interface IServer {
     app: Application;
     start(): void;
 }

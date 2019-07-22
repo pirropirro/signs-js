@@ -3,10 +3,10 @@ import { Container } from "inversify";
 
 import { IModule } from "./IModule";
 import { ControllerUtil } from "./Route";
-import { IExpress } from "../engine/IExpress";
+import { IServer } from "../engine/IServer";
 import { MainModule } from "../modules/MainModule";
 import { IMiddleware } from '../middlewares/IMiddleware';
-import { IExpressConfig } from "../engine/IExpressConfig";
+import { IServerConfig } from "../engine/IServerConfig";
 import { IController, IHandlerFactory } from '../engine/IController';
 
 let container = new Container();
@@ -23,9 +23,9 @@ export class Application {
     }
 
     run() {
-        let exp = this.container.get<IExpress>("IExpress");
+        let exp = this.container.get<IServer>("IServer");
         let factory = this.container.get<IHandlerFactory>("IHandlerFactory");
-        let { suffix = "api" } = this.container.get<IExpressConfig>("IExpressConfig");
+        let { suffix = "api" } = this.container.get<IServerConfig>("IServerConfig");
 
         this.container.getAll<IMiddleware>("IMiddleware").forEach(m => exp.app.use(m.transform.bind(m)));
         this.container.getAll<IController>("IController").forEach(c => {
