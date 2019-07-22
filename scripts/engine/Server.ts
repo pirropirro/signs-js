@@ -1,18 +1,17 @@
-import * as path from "path";
 import * as express from "express";
 import { inject, injectable } from "inversify";
 
-import { IExpress } from "./IExpress";
+import { IServer } from "./IServer";
 import { ILogger } from '../logger/ILogger';
-import { IExpressConfig } from "./IExpressConfig";
+import { IServerConfig } from "./IServerConfig";
 
 @injectable()
-export class Express implements IExpress {
+export class Server implements IServer {
     public app: express.Application = express();
 
-    constructor(@inject("IExpressConfig") private config: IExpressConfig,
+    constructor(@inject("IServerConfig") private config: IServerConfig,
         @inject("ILogger") private logger: ILogger) {
-        this.logger.setContext("Express")
+        this.logger.setContext("Server")
         this.setupTerminationHandlers();
     }
 

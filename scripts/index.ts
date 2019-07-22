@@ -2,9 +2,10 @@ export { IModule } from "./bootstrapper/IModule";
 export { Application } from "./bootstrapper/Application";
 export { Controller, Route, RouteType, RouteMetadata } from "./bootstrapper/Route";
 
-export { IExpressConfig } from "./engine/IExpressConfig";
+export { IServer } from "./engine/IServer";
+export { IServerConfig } from "./engine/IServerConfig";
 export { IController, IRoute, IRouteDecorator, IHandlerFactory } from "./engine/IController";
-export { IException, Exception, BadRequestException, UnauthorizedException, ForbiddenException, ServerErrorException } from "./engine/Exception";
+export { IException, Exception, BadRequestException, UnauthorizedException, ForbiddenException, NotFoundException, ServerErrorException } from "./engine/Exception";
 
 export { ILogger } from "./logger/ILogger";
 
