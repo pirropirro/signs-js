@@ -34,6 +34,12 @@ export class ForbiddenException extends Exception {
     }
 }
 
+export class NotFoundException extends Exception {
+    constructor(body: string | any) {
+        super(isString(body) ? { message: `${body}` } : body, 404);
+    }
+}
+
 export class ServerErrorException extends Exception { }
 
 export function isException(ex: Exception): boolean {
