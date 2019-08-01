@@ -1,5 +1,5 @@
 export interface IServerConfig {
     port: number;
-    suffix?: string;
+    prefix?: string;
     ipaddress: string;
 }

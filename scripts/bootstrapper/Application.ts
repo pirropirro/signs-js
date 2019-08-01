@@ -25,12 +25,12 @@ export class Application {
     run() {
         let exp = this.container.get<IServer>("IServer");
         let factory = this.container.get<IHandlerFactory>("IHandlerFactory");
-        let { suffix = "api" } = this.container.get<IServerConfig>("IServerConfig");
+        let { prefix = "api" } = this.container.get<IServerConfig>("IServerConfig");
 
         this.container.getAll<IMiddleware>("IMiddleware").forEach(m => exp.app.use(m.transform.bind(m)));
         this.container.getAll<IController>("IController").forEach(c => {
             let { base, routes } = ControllerUtil.getMetadata(c.constructor);
-            forEach(routes, (metadata => exp.app[metadata.type](`/${suffix}${base}${metadata.location}`, factory.create(c, metadata))));
+            forEach(routes, (metadata => exp.app[metadata.type](`/${prefix}${base}${metadata.location}`, factory.create(c, metadata))));
         });
 
         exp.start();
