@@ -12,9 +12,12 @@ import { IController, IHandlerFactory } from '../engine/IController';
 let container = new Container();
 
 export class Application {
-    protected container = container;
     constructor() {
         this.register(new MainModule());
+    }
+
+    get container() {
+        return container;
     }
 
     register(module: IModule): boolean {
