@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - '6'
+- '6'
 install:
-  - npm install
+- npm install
 script:
-  - npm run-script build
+- npm run-script build
 deploy:
   provider: npm
   skip_cleanup: true
-  email: "fra.pirrotta@gmail.com"
+  email: fra.pirrotta@gmail.com
   api_key:
-    secure: cmUCzTv3rI7oIAwTz9ZFUvhL+hxM7AmuRBJvQ6s9GCIkZm1a8KwB892uptNV2Po6gBRwuPuyUh8LRQfvegWzJTC3olJGTultqkr6nYIHMucEzpFkHeRXdWkITcpDpAAmXjFL3QnP3QY58GgZDoFsiCS2SRtOuWKCn6r0PA5biXs0NyxHIrODyNj/YITgwpmXbz6mAg1hOUdVdXmBjid9+AkVhLy8JPWU/bXuz0TETw+kzuyO/sKMR/3GP+v2yXFfC5LHidqYL7oPfqMwLmOBqmDmAAEpAD+Czw1+IbSXUvUUozIZu2uJyBugYLFvaE17Xm/8z86RnkG++AUM/qyJwViwl9kAZ/kVceFXfKSCbBD+yf7rpdRvSwz83/nJ3GAPa7oAb30XmQFvtDfOu/mfRplOi/wAZCMJqWcExJ0M9MOO1kvU0qSc3/GsLls9SpXJUfly32DMGCfalHP1YGpQrfKAAG5y3vKxKP0xiBxWiHEGEvEvEJXvNoIqfvYjLSLvXzV3lDcLjc/I91ME6rqb/bIcwCEXBLXl8X3ELmHK36R8xT+U9qHFbniGLtE4xC7CjJVe7PaW+EoMjVzh1yLhyPJHRKSag1l7L8e2jgoZb3Uj33JH9qFe7fG8NHE/P3YIuHveQvm3oqHlSOi/IEkZp7z8RpSrZEtLhIbvX2prBmY=
+    secure: 1xuQfqWy2Vhe1wegIJ9Pke6BaMmVLlGIgg5e6NjoZwh6h6f3y0H8g2eBD9x5sXbWPeCSL722DyyMLccPA/wBNtFry3D0PJ0oQ13yhMM8wDcRpnuK6MZ7sRjKxiic0lU/fP2FGQyJghnfazqzU8v5Z3BbFd3akZFWAAV6uuO3eGHqP3gsIyLozXA+PZLMJ0f0WXlOrMFHBwurkl3Wc6VwfrYQERPeiMCfRB4Vo48WJwnlC+6Yihgr05+ZhPsuUF/wKVzYEHtZN9any+rTKO49erDOfUtKywK4jVXcZWXMrxioYRQHD6jWzV7M1OcwyebTkTwgKH7f02xilfXzYI34oeAF7g5BIB34nACRgJPdCscgSuZx639DYaG6Ow7IeHTHj/ZL0kVArWl8cpwCuA7/TR1UyvnTCC4WRXCvV/ntQPR+afkW1rt9xdvhNiAGX4rJYxJ8a8T2+h6UDWkPB/tl4Uz8yZ2HL7JEQyo4CATThJgHDf3kjjrxwHCiJ99zwMZRsULn4ywMNJME1CAFqdl0VPEMiVx4boA77upiS7VM4D/l5iiDFOwfqh7/m57gelwnQ2kgo5PgV+wf/UfzNjrHo6dLw27z97tgJ9eYPeOgr8Ux4tSqsRFragw9+Aro/plbyNaPFV6X3A9Xoi4anwXHMQSgWUavQdkOsC5c4FsOqoA=
   on:
     tags: true
