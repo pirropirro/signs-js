@@ -11,7 +11,13 @@ import { IController, IHandlerFactory } from '../engine/IController';
 
 let container = new Container();
 
-export class Application {
+export interface IApplication {
+    run(): void;
+    readonly container: Container;
+    register(module: IModule): IApplication;
+}
+
+export class Application implements IApplication {
     constructor() {
         this.register(new MainModule());
     }
@@ -20,12 +26,12 @@ export class Application {
         return container;
     }
 
-    register(module: IModule): boolean {
+    register(module: IModule): IApplication {
         module.modules(this.container);
-        return true;
+        return this;
     }
 
-    run() {
+    run(): void {
         let exp = this.container.get<IServer>("IServer");
         let factory = this.container.get<IHandlerFactory>("IHandlerFactory");
         let { prefix = "api" } = this.container.get<IServerConfig>("IServerConfig");
