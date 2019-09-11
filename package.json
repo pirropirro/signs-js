@@ -1,6 +1,6 @@
 {
   "name": "signs-js",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Just Express. Made easy.",
   "main": "dist",
   "typings": "dist",
