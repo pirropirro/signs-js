@@ -1,5 +1,5 @@
 export { IModule } from "./bootstrapper/IModule";
-export { Application } from "./bootstrapper/Application";
+export { Application, IApplication } from "./bootstrapper/Application";
 export { Controller, Route, RouteType, RouteMetadata } from "./bootstrapper/Route";
 
 export { IServer } from "./engine/IServer";
